@@ -23,7 +23,7 @@ def get_integer_list():
             continue
 
         if num_list[-1] == 0:
-            print("Invalid input: The last integer cannot be 0. Please re-enter the numbers.")
+            print("Invalid input: The Last Integer cannot be 0. Please re-enter the numbers.")
             continue
 
         return num_list
