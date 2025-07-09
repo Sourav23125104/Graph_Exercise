@@ -3,35 +3,33 @@ from multiply import multiply_numbers
 from divide import divide_first_last
 
 def get_integer_list():
-    print("Enter at least 2 integers one by one (type 'done' to finish):")
-    print("Note: The last integer entered cannot be 0.")
-
+    print("You need to enter at least 2 integers.")
+    print("Note: The last integer must not be 0.")
     while True:
+        try:
+            count = int(input("How many integers do you want to enter? > "))
+            if count < 2:
+                print("Please enter at least 2 integers.")
+                continue
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
         num_list = []
-        while True:
-            user_input = input("> ")
-            if user_input.lower() == 'done':
-                break
-            try:
-                num = int(user_input)
-                num_list.append(num)
-            except ValueError:
-                print("Invalid input. Please enter an integer or 'done'.")
-
-        if len(num_list) < 2:
-            print("Error: You must enter at least 2 integers.")
-            continue
-
+        for i in range(count):
+            while True:
+                try:
+                    num = int(input(f"Enter integer #{i + 1}: "))
+                    num_list.append(num)
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter an integer.")
         if num_list[-1] == 0:
-            print("Invalid input: The Last Integer cannot be 0. Please re-enter the numbers.")
+            print("The last integer cannot be 0. Please start over.\n")
             continue
-
         return num_list
-
 if __name__ == "__main__":
     numbers = get_integer_list()
     print(f"Initial List: {numbers}")
-
     add_numbers(numbers)
     multiply_numbers(numbers)
     divide_first_last(numbers)
