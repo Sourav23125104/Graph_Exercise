@@ -1,7 +1,7 @@
 import random
 from functools import reduce
 
-def multiply_numbers(num_list):
+def fn(num_list):
     attempts = 0
     while attempts < 3:
         product = reduce(lambda x, y: x * y, num_list)

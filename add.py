@@ -1,6 +1,6 @@
 import random
 
-def add_numbers(num_list):
+def fn(num_list):
     attempts = 0
     while attempts < 3:
         total = sum(num_list)

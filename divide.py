@@ -1,6 +1,6 @@
 import math
 
-def divide_first_last(num_list):
+def fn(num_list):
     if num_list[-1] == 0:
         print("Cannot divide by zero (last element is 0).")
         return None
